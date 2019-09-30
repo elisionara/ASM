@@ -2,314 +2,230 @@
 
 main:
 	
-#SOLICITA O TIPO DE PAGAMENTO(INTEIRO C”DIGO 4)
+#SOLICITA O TIPO DE PAGAMENTO(INTEIRO C√ìDIGO 4)
 
 	la $a0, tp        #coloca a mensagem solicitando o tipo de pagamento para ser impresso
-	
-	li $v0, 4         #È utilizado o cÛdigo 4 para printar uma string(no caso, de caracteres) na tela
-	
+	li $v0, 4         #√© utilizado o c√≥digo 4 para printar uma string(no caso, de caracteres) na tela
 	syscall           #realiza a chamada do sistema
-
 	#primeiro \n
 	
-
 	la $a0, n1        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-	li $v0, 4         #comando de impress„o da string 
-	
+	li $v0, 4         #comando de impress√£o da string 
 	syscall 	  #realiza a chamada do sistema
 	
+#OP√áA√ï DE D√âBITO
 	
-
-	#OP«A’ DE D…BITO
-	
-	la $a0, debito    #coloca a mensagem informando o cÛdigo de dÈbito para ser impresso
- 
-	li $v0, 4         #comando de impress„o da string 
-	
+	la $a0, debito    #coloca a mensagem informando o c√≥digo de d√©bito para ser impresso 
+	li $v0, 4         #comando de impress√£o da string 
 	syscall 	  #realiza a chamada do sistema
 	
+#OP√áA√ï DE CR√âDITO
 	
-	
-	#OP«A’ DE CR…DITO
-	
-	la $a0, credito   #coloca a mensagem informando o cÛdigo de crÈdito para ser impresso
-
-	li $v0, 4         #comando de impress„o da string 
-
+	la $a0, credito   #coloca a mensagem informando o c√≥digo de cr√©dito para ser impresso
+	li $v0, 4         #comando de impress√£o da string 
 	syscall           #realiza a chamada do sistema
 	
-
 	#segundo \n
-	
 	la $a0, n2        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-	li $v0, 4         #comando de impress„o da string 
-	
+	li $v0, 4         #comando de impress√£o da string 
 	syscall		  #realiza a chamada do sistema
 	  	
+#L√ä O C√ìDIGO DO TIPO DE PAGAMENTO DO BUFFER DE ENTRADA 
 	
-	
-	#L  O C”DIGO DO TIPO DE PAGAMENTO DO BUFFER DE ENTRADA 
-	
-	li $v0, 5         #comando de leitura de inteiro 
-	
+	li $v0, 5         #comando de leitura de inteiro 	
 	syscall   	  #realiza a chamada do sistema
-	
 	move $t0, $v0     #move o que foi lido em $v0 para $t0 
 	
+#SOLICITA A BANDEIRA
 	
-	
-	#SOLICITA A BANDEIRA
-	
-	la $a0, bandeira  #coloca a mensagem soliciando o cÛdigo da bandeira para ser impresso
-	
-	li $v0, 4         #comando de impress„o da string 
-	
+	la $a0, bandeira  #coloca a mensagem soliciando o c√≥digo da bandeira para ser impresso	
+	li $v0, 4         #comando de impress√£o da string 
 	syscall           #realiza a chamada do sistema
 	
-
 	#terceiro \n      
-	
 	la $a0, n3        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-	li $v0, 4         #comando de impress„o da string 
-	
+	li $v0, 4         #comando de impress√£o da string 
 	syscall           #realiza a chamada do sistema
 	
-	
-	la $a0, bandeira1 #coloca a mensagem informando o cÛdigo da bandeira 1-VISA para ser impresso
-	
-	li $v0, 4         #comando de impress„o da string 
-	
+	la $a0, bandeira1 #coloca a mensagem informando o c√≥digo da bandeira 1-VISA para ser impresso
+	li $v0, 4         #comando de impress√£o da string 
 	syscall           #realiza a chamada do sistema
 	
-	
-	la $a0, bandeira2 #coloca a mensagem informando o cÛdigo da bandeira 2-MASTER para ser impresso
-	
-li $v0, 4         #comando de impress„o da string 
-	
-syscall           #realiza a chamada do sistema
+	la $a0, bandeira2 #coloca a mensagem informando o c√≥digo da bandeira 2-MASTER para ser impresso	
+	li $v0, 4 	  #comando de impress√£o da string 
+	syscall           #realiza a chamada do sistema
 	 
+	la $a0, bandeira3 #coloca a mensagem informando o c√≥digo da bandeira 3-ELO para ser impresso
+	li $v0, 4         #comando de impress√£o da string 
+	syscall           #realiza a chamada do sistema
 	
-la $a0, bandeira3 #coloca a mensagem informando o cÛdigo da bandeira 3-ELO para ser impresso
-	
-li $v0, 4         #comando de impress„o da string 
-	
-syscall           #realiza a chamada do sistema
 	#quarto \n        
+	la $a0, n4        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+	li $v0, 4         #comando de impress√£o da string 
+	syscall           #realiza a chamada do sistema
 	
-la $a0, n4        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-li $v0, 4         #comando de impress„o da string 
-	
-syscall           #realiza a chamada do sistema
-	
-	
-#L  A BANDEIRA SOLICITADA DO BUFFER DE ENTRADA(VALOR INTEIRO C”DIGO 5)
-	
-li $v0, 5         #comando de leitura de inteiro 
-	
-syscall           #realiza a chamada do sistema
-	
-move $t1, $v0     #move o que foi lido em $v0 para $t1 
-	
-	
+#L√ä A BANDEIRA SOLICITADA DO BUFFER DE ENTRADA(VALOR INTEIRO C√ìDIGO 5)
+	li $v0, 5         #comando de leitura de inteiro 
+	syscall           #realiza a chamada do sistema
+	move $t1, $v0     #move o que foi lido em $v0 para $t1 
+
 #SOLICITA O VALOR A SER PAGO
-	
-la $a0, valor    #coloca a mensagem soliciando o valor da compra para ser impresso
-	
-li $v0, 4        #comando de impress„o da string 
-	
-syscall          #realiza a chamada do sistema
-	
-	
-#quinto \n      
-	
-la $a0, n5      #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-li $v0, 4       #comando de impress„o da string 
-	
-syscall         #realiza a chamada do sistema
-	
-	
-#L  O VALOR DO BUFFER DE ENTRADA(C”DIGO PARA VALOR REAL 6)
-	
-li $v0, 6       #comando de leitura de real
-	
-syscall         #realiza a chamada do sistema
-	
-move $t2,$v0    #move o que foi lido em $v0 para $t2 
-	
-	
-#SOLICITA LEITURA DO CART√O 
-	
-la $a0, leitura  #coloca a mensagem soliciando a leitura do cart„o para ser impresso
-	
-li $v0, 4        #comando de impress„o da string 
-	
-syscall          #realiza a chamada do sistema
-	
-#sexto \n      
-	la $a0, n6       
-#coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-li $v0, 4        #comando de impress„o da string 
-	
-syscall          #realiza a chamada do sistema
-	
-	
-	
-#L  O N⁄MERO DO CART√O DO BUFFER DE ENTRADA
-	
-li $v0, 8        #comando de leitura de string
-        
-la $a0, numbcart #coloca no buffer(espaÁo reservado em numbcart)
-        
-li $a1, 18       #tamanho do buffer(18 bits)
 
-        
-syscall          #realiza a chamada do sistema
-        
-move $t3, $a0    #move o que foi colocado em numbcart para $t3
+	la $a0, valor    #coloca a mensagem soliciando o valor da compra para ser impresso
+	li $v0, 4        #comando de impress√£o da string 
+	syscall          #realiza a chamada do sistema
 	
+	#quinto \n      
+	la $a0, n5      #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+	li $v0, 4       #comando de impress√£o da string 
+	syscall         #realiza a chamada do sistema
 	
-#SOLICITA A SENHA DO CART√O
-	
-la $a0, senha    #coloca a mensagem soliciando a senha do cart„o para ser impresso
-	
-li $v0, 4        #comando de impress„o da string 
-	
-syscall          #realiza a chamada do sistema
-	
-#setimo \n        
-	
-la $a0, n7        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-li $v0, 4         #comando de impress„o da string 
-	
-syscall           #realiza a chamada do sistema
-	
-	
-	
-#L  A SENHA DO CART√O DO BUFFER DE ENTRADA
-	
-li $v0, 8         #comando de leitura de string
-        
-la $a0, senhacart #coloca no buffer(espaÁo reservado em senhacart)
-        
-li $a1, 11        #tamanho do buffer(11 bits)
+#L√ä O VALOR DO BUFFER DE ENTRADA(C√ìDIGO PARA VALOR REAL 6)
 
-        
-syscall           #realiza a chamada do sistema
-        
-move $t4, $a0     #move o que foi colocado em $a0 para $t4
-         
-#oitavo \n       
+	li $v0, 6       #comando de leitura de real
+	syscall         #realiza a chamada do sistema
+	move $t2,$v0    #move o que foi lido em $v0 para $t2 
+
+#SOLICITA LEITURA DO CART√ÉO 
+
+	la $a0, leitura  #coloca a mensagem soliciando a leitura do cart√£o para ser impresso
+	li $v0, 4        #comando de impress√£o da string 
+	syscall          #realiza a chamada do sistema
+
+	#sexto \n      
+	la $a0, n6       #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+	li $v0, 4        #comando de impress√£o da string 
+	syscall          #realiza a chamada do sistema
 	
-la $a0, n8        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+#L√ä O N√öMERO DO CART√ÉO DO BUFFER DE ENTRADA
 	
-li $v0, 4         #comando de impress„o da string 
+	li $v0, 8        #comando de leitura de string
+	la $a0, numbcart #coloca no buffer(espa√ßo reservado em numbcart)
+	li $a1, 18       #tamanho do buffer(18 bits)
+	syscall          #realiza a chamada do sistema
+	move $t3, $a0    #move o que foi colocado em numbcart para $t3
 	
-syscall    
+#SOLICITA A SENHA DO CART√ÉO
+	
+	la $a0, senha    #coloca a mensagem soliciando a senha do cart√£o para ser impresso
+	li $v0, 4        #comando de impress√£o da string 
+	syscall          #realiza a chamada do sistema
+
+	#setimo \n        
+	la $a0, n7        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+	li $v0, 4         #comando de impress√£o da string 
+	syscall           #realiza a chamada do sistema
+	
+#L√ä A SENHA DO CART√ÉO DO BUFFER DE ENTRADA
+	
+	li $v0, 8         #comando de leitura de string
+	la $a0, senhacart #coloca no buffer(espa√ßo reservado em senhacart)
+	li $a1, 11        #tamanho do buffer(11 bits)
+	syscall           #realiza a chamada do sistema
+
+	move $t4, $a0     #move o que foi colocado em $a0 para $t4
+	#oitavo \n       
+	la $a0, n8        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+	li $v0, 4         #comando de impress√£o da string 
+	syscall    
 	
 #PRINTAR NA TELA:
 	
 #TIPO DE PAGAMENTO
 	
-la $a0, mens1     #coloca a mensagem 1 com o tipo de pagamento fornecido para ser impresso
-	
-li $v0, 4         #comando de impress„o da string 
-	
-syscall           #realiza a chamada do sistema
-	
-	
-li $v0, 1         #comando de impress„o de inteiro na tela
-        
-la $a0, ($t0)     #coloca o registrador $t0 para ser impresso
-        
-syscall           #realiza a chamada do sistema
-        
-#oitavo \n       
-	
-la $a0, n8        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-li $v0, 4         #comando de impress„o da string 
-	
-syscall           #realiza a chamada do sistema
-	
-	
-#BANDEIRA        
-	
-#la $a0, mens2     #coloca a mensagem 2 com a bandeira fornecida para ser impresso
-	
-#li $v0, 4         #comando de impress„o da string 
-	
-#syscall           #realiza a chamada do sistema
-	
-	
-#li $v0, 1        #comando de impress„o de inteiro na tela
-        
-#la $a0, ($t1)    #coloca o registrador $t1 para ser impresso
-        
-#syscall          #realiza a chamada do sistema
-        
-#nono \n         
-	
-#la $a0, n9       
-#coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
- 	
-#li $v0, 4        
-#comando de impress„o da string 
-	
-#syscall          
-#realiza a chamada do sistema
-	
-	
-#VALOR
-	
-la $a0, mens3     #coloca a mensagem 3 com o valor fornecido para ser impresso
-	
-li $v0, 4         #comando de impress„o da string 
-	
-syscall           #realiza a chamada do sistema
-	
-	
-lwc1 $f4, pontofloat # carrega o que tem em pontofloat para o registrador 
-$f4(carrega e imprime)
-	
-	
-la $v0, 2         #comando de impress„o de ponto flutuante na tela
-	
-add.s $f12, $f0, $f4 #adiciona a string guardada em $f4 para $f0, que vai ser impresso quando passado para 
-$f12
-	
-syscall           #realiza a chamada do sistema
-	
-        
-#decimo \n      
-	
-la $a0, n10      #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
-	
-li $v0, 4        #comando de impress„o da string    
-	
-syscall          #realiza a chamada do sistema
-	
-	
-#N⁄MERO DO CART√O
-	
-la $a0, mens4   #coloca a mensagem 4 com o n˙mero do cart„o fornecido para ser impresso
-	
-li $v0, 4       #comando de impress„o da string 
-	
-syscall		#realiza a chamada do sistema
-	
-	
-li $v0, 4       #comando de impress„o da string 
-        
-la $a0, ($t3)   #coloca o registrador $t3 para ser impresso
-        
-syscall         #realiza a chamada do sistema
+	la $a0, mens1     #coloca a mensagem 1 com o tipo de pagamento fornecido para ser impresso
+
+	li $v0, 4         #comando de impress√£o da string 
+
+	syscall           #realiza a chamada do sistema
+
+
+	li $v0, 1         #comando de impress√£o de inteiro na tela
+
+	la $a0, ($t0)     #coloca o registrador $t0 para ser impresso
+
+	syscall           #realiza a chamada do sistema
+
+	#oitavo \n       
+
+	la $a0, n8        #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+
+	li $v0, 4         #comando de impress√£o da string 
+
+	syscall           #realiza a chamada do sistema
+
+
+	#BANDEIRA        
+
+	#la $a0, mens2     #coloca a mensagem 2 com a bandeira fornecida para ser impresso
+
+	#li $v0, 4         #comando de impress√£o da string 
+
+	#syscall           #realiza a chamada do sistema
+
+
+	#li $v0, 1        #comando de impress√£o de inteiro na tela
+
+	#la $a0, ($t1)    #coloca o registrador $t1 para ser impresso
+
+	#syscall          #realiza a chamada do sistema
+
+	#nono \n         
+
+	#la $a0, n9       
+	#coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+
+	#li $v0, 4        
+	#comando de impress√£o da string 
+
+	#syscall          
+	#realiza a chamada do sistema
+
+
+	#VALOR
+
+	la $a0, mens3     #coloca a mensagem 3 com o valor fornecido para ser impresso
+
+	li $v0, 4         #comando de impress√£o da string 
+
+	syscall           #realiza a chamada do sistema
+
+
+	lwc1 $f4, pontofloat # carrega o que tem em pontofloat para o registrador 
+	$f4(carrega e imprime)
+
+
+	la $v0, 2         #comando de impress√£o de ponto flutuante na tela
+
+	add.s $f12, $f0, $f4 #adiciona a string guardada em $f4 para $f0, que vai ser impresso quando passado para 
+	$f12
+
+	syscall           #realiza a chamada do sistema
+
+
+	#decimo \n      
+
+	la $a0, n10      #coloca a mensagem para ser executada(mensagem contendo um quebra linha\n)
+
+	li $v0, 4        #comando de impress√£o da string    
+
+	syscall          #realiza a chamada do sistema
+
+
+	#N√öMERO DO CART√ÉO
+
+	la $a0, mens4   #coloca a mensagem 4 com o n√∫mero do cart√£o fornecido para ser impresso
+
+	li $v0, 4       #comando de impress√£o da string 
+
+	syscall		#realiza a chamada do sistema
+
+
+	li $v0, 4       #comando de impress√£o da string 
+
+	la $a0, ($t3)   #coloca o registrador $t3 para ser impresso
+
+	syscall         #realiza a chamada do sistema
 
 
 
@@ -319,9 +235,9 @@ tp :
 debito :	  
 .asciiz "1.CREDITO"
 credito :	  
-.asciiz "2.D…BITO"
+.asciiz "2.D√âBITO"
 bandeira:         
-.asciiz "Informe a bandeira do cart„o:"
+.asciiz "Informe a bandeira do cart√£o:"
 bandeira1:        
 .asciiz "1.VISA"
 bandeira2:        
@@ -341,7 +257,7 @@ mens2:
 mens3:            
 .asciiz "Valor:"
 mens4:            
-.asciiz "N˙mero do cart„o:"
+.asciiz "N√∫mero do cart√£o:"
 pontofloat :	  
 .float 0.0
 numbcart:         
@@ -349,22 +265,4 @@ numbcart:
 senhacart:        
 .space 11  
 n1       :        
-.asciiz "\n"
-n2       :        
-.asciiz "\n"
-n3       :        
-.asciiz "\n"
-n4       :        
-.asciiz "\n"
-n5       :        
-.asciiz "\n"
-n6       :        
-.asciiz "\n"
-n7       :        
-.asciiz "\n"
-n8       :        
-.asciiz "\n"
-n9       :        
-.asciiz "\n"
-n10       :       
 .asciiz "\n"
