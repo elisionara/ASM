@@ -1,2 +1,2 @@
-# ASM
-Códigos em Assembly - Trabalho Final de Arquitetura de Computadores
+# Arquitetura de Computadores
+Repositório criado para a disciplina de Arquitetura de Computadores, utilizando a linguagem ```Assembly```. 
